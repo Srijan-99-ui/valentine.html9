@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, Dia 💕💐</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef, #ffecd2);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #d63384;
+        }
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .heart {
+            position: absolute;
+            color: #ff6b9d;
+            font-size: 2em;
+            animation: float 6s infinite linear;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+        .question {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 50px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeIn 1s ease-in;
+        }
+        .question h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            background: #d63384;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background 0.3s, transform 0.2s;
+        }
+        button:hover {
+            background: #b0246a;
+            transform: scale(1.05);
+        }
+        .content {
+            display: none;
+            animation: slideIn 1s ease-in;
+        }
+        .memory {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .memory img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .letter {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            font-style: italic;
+            line-height: 1.6;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @media (max-width: 600px) {
+            .question h1 { font-size: 2em; }
+            button { padding: 12px 25px; font-size: 1em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    <div class="container">
+        <div class="question" id="question">
+            <h1>Will you be my Valentine, Dia? 💕</h1>
+            <div class="buttons">
+                <button onclick="revealContent()">Yes! 💖</button>
+                <button onclick="alert('Aww, but I still love you! 😘')">No 😢</button>
+            </div>
+        </div>
+        <div class="content" id="content">
+            <h2>Our Beautiful Memories 💐</h2>
+            <div class="memory">
+                <p>Remember our first kiss? 😘 That moment changed everything for me.</p>
+                <img src="‎IMG-20260123-WA0040.jpg"‎ alt="Our Memory" />
+                <img src="‎IMG-20260123-WA0043.jpg‎" alt="Our Memory" />
+
+            <h2>My Love Letter to You 💌</h2>
+            <div class="letter">
+                <p>My dear Dia,</p>
+                <p>When I sit down to write about you, words pause for a moment. Because you are not just love, you are my peace. I may not always be perfect—sometimes I overthink, sometimes I make mistakes—but one thing I am certain about is that I truly love you from my heart.</p>
+                <p>You came into my life at a time when I am still learning to understand myself. Being with you makes me want to become a better person, more responsible and more mature. Your smile makes my heart light, and your tears make me more caring. Whenever you feel scared, I just want to hold your hand and say, “I’m here.”</p>
+                <p>I know we are both still growing, learning, and sometimes making mistakes. But I believe that with understanding and respect, everything can be solved. I don’t love you for your body; I love your soul. Your thoughts, your vulnerabilities, your strength—those are the most beautiful things about you.</p>
+                <p>You are the most precious chapter of my life. As long as we continue to respect and understand each other, everything will be alright.</p>
+                <p>Remember, even in the middle of all the pressure, there is someone who believes in you and is proud of you</p>
+                <p>Your love(me)💖💐</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function revealContent() {
+            document.getElementById('question').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }
+        // Generate floating hearts
+        function createHearts() {
+            const heartsContainer = document.getElementById('hearts');
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 6 + 's';
+                heartsContainer.appendChild(heart);
+            }
+        }
+        createHearts();
+    </script>
+</body>
+</html>
